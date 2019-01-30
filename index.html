@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1>Purchase Tracker</h1>
+  <h3 id='user-message'></h3>
+  <nav class="nav">
+    <div class="logged-out">
+      <h3>Sign Up</h3>
+      <form id='sign-up'>
+        <input type="text" name="credentials[email]" placeholder="Email">
+        <input type="text" name="credentials[password]" placeholder="Password">
+        <input type="text" name="credentials[password_confirmation]" placeholder="Confirm Password">
+        <button>Submit</button>
+      </form>
+      <h3>Sign In</h3>
+      <form id='sign-in'>
+        <input type="text" name="credentials[email]" placeholder="Email">
+        <input type="text" name="credentials[password]" placeholder="Password">
+        <button>Sign In</button>
+      </form>
+    </div>
+    <div class="logged-in">
+      <h3>Change Password</h3>
+      <form id='change-password'>
+        <input type="text" name="passwords[old]" placeholder="Old Password">
+        <input type="text" name="passwords[new]" placeholder="New Password ">
+        <button>Submit</button>
+      </form>
+      <h3>Sign Out</h3>
+      <form id='sign-out'>
+        <button type="submit">Sign Out</button>
+      </form>
+    </div>
+  </nav>
+</body>
+
 </html>
