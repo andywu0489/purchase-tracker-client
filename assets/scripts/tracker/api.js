@@ -39,9 +39,66 @@ const signOut = () => {
   })
 }
 
+const index = function () {
+  return $.ajax({
+    url: config.apiUrl + '/purchases/',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    method: 'GET'
+  })
+}
+
+const show = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/purchases/' + id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    method: 'GET'
+  })
+}
+
+const update = function (id, data) {
+  return $.ajax({
+    url: config.apiUrl + '/purchases/' + id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    method: 'PATCH',
+    data: data
+  })
+}
+
+const destroy = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/purchases/' + id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    method: 'DELETE'
+  })
+}
+
+const create = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/purchases/',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    method: 'POST',
+    data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  index,
+  show,
+  update,
+  destroy,
+  create
 }

@@ -15,18 +15,28 @@ h1 {
   text-align: center;
 }
 
-.nav {
-  align-self: center;
-}
-
-.win-text {
-  text-align: center;
-}
-
 .logged-in {
   display: none;
 }
 
-.container {
-  display: none;
+
+.logged-out {
+  align-content: center;
+}
+
+// .row {
+//   border: 3px solid $black
+// }
+
+#one {
+  border: 3px solid $black;
+  height: 175px;
+  max-width: 300px;
+}
+
+#two {
+  border: 3px solid $black;
+  height: 175px;
+  max-width: 300px;
+  align-content: center;
 }
