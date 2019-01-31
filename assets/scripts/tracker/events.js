@@ -46,11 +46,8 @@ const onSignOut = (event) => {
 }
 
 const onGetPurchases = function () {
-  // make API call for all the purchases
   api.index()
-  // when API call is successful
     .then(ui.onGetPurchasesSuccess)
-  // when API call fails
     .catch(ui.onGetPurchasesFailure)
 }
 
@@ -58,11 +55,8 @@ const onGetPurchase = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const id = data.purchase.id
-  // make API call for all the purchases
   api.show(id)
-  // when API call is successful
     .then(ui.onGetPurchaseSuccess)
-    // when API call fails
     .catch(ui.onGetPurchaseFailure)
 }
 
@@ -72,9 +66,7 @@ const onUpdatePurchase = function (event) {
   const id = data.purchase.id
 
   api.update(id, data)
-  // when API call is successful
     .then(ui.onUpdatePurchaseSuccess)
-  // when API call fails
     .catch(ui.onUpdatePurchaseFailure)
 }
 
@@ -82,11 +74,8 @@ const onDestroyPurchase = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const id = data.purchase.id
-  // make API call for all the purchases
   api.destroy(id)
-  // when API call is successful
     .then(ui.onDestroyPurchaseSuccess)
-    // when API call fails
     .catch(ui.onDestroyPurchaseFailure)
 }
 
@@ -98,6 +87,82 @@ const onCreatePurchase = function (event) {
     .catch(ui.onCreatePurchaseFailure)
 }
 
+const onGetPurchasesAfterDelete = function () {
+  api.index()
+    .then(ui.onGetPurchasesAfterDeleteSuccess)
+    .catch(ui.onGetPurchasesFailure)
+}
+
+const onDeletePurchase = (event) => {
+  event.preventDefault()
+  const target = $(event.target).closest('section').data('id')
+  api.destroy(target)
+    .then(() => onGetPurchasesAfterDelete(event))
+    .catch(ui.onDeletePurchaseFailure)
+}
+
+const onShowSignIn = function () {
+  $('#column1').hide()
+  $('#column2').show()
+  $('#user-message').html('')
+}
+
+const onShowSignUp = function () {
+  $('#column2').hide()
+  $('#column1').show()
+  $('#user-message').html('')
+}
+
+const onShowChangePassword = () => {
+  $('#change-password').show()
+  $('#purchase-show').hide()
+  $('#purchase-update').hide()
+  $('#purchase-destroy').hide()
+  $('#purchases-create').hide()
+  $('#content').html('<p></p>')
+  $('#user-message').html('')
+}
+
+const onShowPurchaseShow = () => {
+  $('#change-password').hide()
+  $('#purchase-show').show()
+  $('#purchase-update').hide()
+  $('#purchase-destroy').hide()
+  $('#purchases-create').hide()
+  $('#content').html('<p></p>')
+  $('#user-message').html('')
+}
+
+const onShowPurchaseUpdate = () => {
+  $('#change-password').hide()
+  $('#purchase-show').hide()
+  $('#purchase-update').show()
+  $('#purchase-destroy').hide()
+  $('#purchases-create').hide()
+  $('#content').html('<p></p>')
+  $('#user-message').html('')
+}
+
+const onShowPurchaseDestroy = () => {
+  $('#change-password').hide()
+  $('#purchase-show').hide()
+  $('#purchase-update').hide()
+  $('#purchase-destroy').show()
+  $('#purchases-create').hide()
+  $('#content').html('<p></p>')
+  $('#user-message').html('')
+}
+
+const onShowPurchaseCreate = () => {
+  $('#change-password').hide()
+  $('#purchase-show').hide()
+  $('#purchase-update').hide()
+  $('#purchase-destroy').hide()
+  $('#purchases-create').show()
+  $('#content').html('<p></p>')
+  $('#user-message').html('')
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -107,5 +172,14 @@ module.exports = {
   onGetPurchase,
   onUpdatePurchase,
   onDestroyPurchase,
-  onCreatePurchase
+  onCreatePurchase,
+  onDeletePurchase,
+  onGetPurchasesAfterDelete,
+  onShowSignIn,
+  onShowSignUp,
+  onShowChangePassword,
+  onShowPurchaseShow,
+  onShowPurchaseUpdate,
+  onShowPurchaseDestroy,
+  onShowPurchaseCreate
 }

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>Purchase Tracker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags-->
@@ -14,81 +14,104 @@
 </head>
 
 <body>
-  <h1>Purchase Tracker</h1>
+  <header>
+    <h1>Purchase Tracker</h1>
+  </header>
+  <nav id='nav1'>
+    <button id='sign-in-button'>Sign In</button>
+    <button id='sign-up-button'>Sign Up</button>
+  </nav>
+  <nav id='nav2'>
+    <button id='change-password-button'>Change Password</button>
+    <button id='sign-out'>Sign Out</button>
+    <button id='purchases-index'>View All Purchases</button>
+    <button id='purchase-show-button'>View Purchase</button>
+    <button id='purchase-update-button'>Update Purchase</button>
+    <button id='purchase-destroy-button'>Delete Purchase</button>
+    <button id='purchase-create-button'>Enter Purchase</button>
+  </nav>
+
+
   <h3 id='user-message'></h3>
     <div class="logged-out">
 
-      <div class='row'>
-            <div id="box-1" class='col-6 col-md-6 col-lg-6 box'>
-              <div id='one'>
-                <h3>Sign Up</h3>
-                <form id='sign-up'>
-                  <input type="text" name="credentials[email]" placeholder="Email" required>
-                  <br>
-                  <input type="text" name="credentials[password]" placeholder="Password" required>
-                  <br>
-                  <input type="text" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
-                  <br>
-                  <button>Submit</button>
-                </form>
-              </div>
-            </div>
-            <div id="box-2" class='col-6 col-md-6 col-lg-6 box'>
-              <div id='two'>
-                <h3>Sign In</h3>
-                <form id='sign-in'>
-                  <input type="text" name="credentials[email]" placeholder="Email" required>
-                  <br>
-                  <input type="text" name="credentials[password]" placeholder="Password" required>
-                  <br>
-                  <button>Sign In</button>
-                </form>
-              </div>
-            </div>
-          </div>
-
-
-
-
+      <div class="row">
+        <div id="column1">
+          <h3>Sign Up</h3>
+          <form id='sign-up'>
+            <input type="text" name="credentials[email]" placeholder="Email" required>
+            <br>
+            <input type="text" name="credentials[password]" placeholder="Password" required>
+            <br>
+            <input type="text" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
+            <br>
+            <button>Sign Up</button>
+          </form>
+        </div>
+        <div id="column2">
+          <h3>Sign In</h3>
+          <form id='sign-in'>
+            <input type="text" name="credentials[email]" placeholder="Email" required>
+            <br>
+            <input type="text" name="credentials[password]" placeholder="Password" required>
+            <br>
+            <button>Sign In</button>
+          </form>
+        </div>
+      </div>
     </div>
     <div class="logged-in">
+      <div class='container'>
+      <div id='change-password'>
       <h3>Change Password</h3>
-      <form id='change-password'>
+      <form >
         <input type="text" name="passwords[old]" placeholder="Old Password" required>
         <input type="text" name="passwords[new]" placeholder="New Password " required>
         <button>Submit</button>
       </form>
-      <h3>Sign Out</h3>
-      <form id='sign-out'>
-        <button type="submit">Sign Out</button>
-      </form>
-      <br>
-      <button id='purchases-index'>Get all purchases</button>
-      <h4>Get a Purchase</h4>
-      <form id='purchase-show'>
-        <input name="purchase[id]" type="text" placeholder="Purchase ID" required>
+    </div>
+  </div>
+  <div class='container'>
+      <div id='purchase-show'>
+      <h4>View Purchase by ID#</h4>
+      <form>
+        <input name="purchase[id]" type="number" placeholder="Purchase ID" required>
         <button type="submit">Submit</button>
       </form>
-      <h4>Update a Purchase</h4>
-      <form id='purchase-update'>
-        <input name="purchase[id]" type="number" placeholder='Purchase ID' required>
+    </div>
+  </div>
+  <div class='container'>
+    <div id='purchase-update'>
+      <h4>Update Purchase by ID#</h4>
+      <form>
+        <input name="purchase[id]" type="number" placeholder='Purchase ID#' required>
         <input name="purchase[item]" type="text" placeholder='Updated Item Name' required>
         <input name="purchase[price]" type="number" step="0.01" placeholder='Updated Price ' required>
         <input name="purchase[date]" type="date" placeholder='Updated Date' required>
         <button type= "submit">Submit</button>
       </form>
-      <h4>Delete a Purchase</h4>
-      <form id='purchase-destroy'>
+    </div>
+  </div>
+  <div class='container'>
+      <div id='purchase-destroy'>
+      <h4>Delete Purchase by ID</h4>
+      <form>
         <input name="purchase[id]" type="number" placeholder= 'Purchase ID' required>
         <button type="submit">Submit</button>
       </form>
-      <h4>Enter a Purchase</h4>
-      <form id="purchases-create">
+    </div>
+  </div>
+  <div class='container'>
+    <div id="purchases-create">
+      <h4>Enter Purchase</h4>
+      <form>
           <input type="text" name="purchase[item]" placeholder="Item Name" required>
           <input type="number" step="0.01" name="purchase[price]" placeholder="Item Price" required>
           <input type="date" name="purchase[date]" placeholder="Date of Purchase" required>
         <button type="submit">Enter Purchase</button>
       </form>
+    </div>
+  </div>
       <div id='content'></div>
     </div>
 
