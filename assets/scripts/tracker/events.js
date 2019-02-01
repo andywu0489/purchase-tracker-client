@@ -97,7 +97,7 @@ const onDeletePurchase = (event) => {
   event.preventDefault()
   const target = $(event.target).closest('section').data('id')
   api.destroy(target)
-    .then(() => onGetPurchasesAfterDelete(event))
+    .then(() => onGetPurchasesAfterDelete())
     .catch(ui.onDeletePurchaseFailure)
 }
 
