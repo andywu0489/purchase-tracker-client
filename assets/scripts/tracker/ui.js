@@ -128,6 +128,7 @@ const onGetPurchaseSuccess = function (response) {
         <h6>Item Name: ${purchase.item}</h6>
         <h6>Price: $${purchase.price}</h6>
         <h6>Date: ${purchase.date}</h6>
+        <h6>Location: ${purchase.location}</h6>
         <h6>ID: ${purchase.id}</h6>
         <button id='delete'>Delete</button>
       </div>
