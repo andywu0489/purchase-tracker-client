@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Rubik:900" rel="stylesheet">
   <title>Purchase Tracker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,8 +15,127 @@
 </head>
 
 <body>
+  <div id='page-wrapper'>
   <header>
     <h1>Purchase Tracker</h1>
+    <h6 id='user-message'></h6>
+  </header>
+  <nav>
+    <button class='nav-button' id='sign-in-button'>Sign In</button>
+    <button class='nav-button' id='sign-up-button'>Sign Up</button>
+    <button class='nav-button' id='change-password-button'>Change Password</button>
+    <button class='nav-button' id='sign-out'>Sign Out</button>
+  </nav>
+
+  <div class='row'>
+    <div class='column' id='column1'>
+      <div id='button-holder'>
+        <button class='side-button' id='purchases-index'>View All Purchases</button>
+        <button class='side-button' id='purchase-show-button'>View Purchase</button>
+        <button class='side-button' id='purchase-update-button'>Update Purchase</button>
+        <button class='side-button' id='purchase-destroy-button'>Delete Purchase</button>
+        <button class='side-button' id='purchase-create-button'>Enter Purchase</button>
+    </div>
+    </div>
+    <div class='column' id='column2'>
+      <div id='stuff'>
+      <h2 class='welcome-message'>Welcome!</h2>
+      <h4 class='welcome-message'>Sign-up, log-in, and start tracking your spending habits!</h4>
+      <div class="form-holder">
+      <div class="logged-out">
+        <div class="row">
+          <div id="sign-up-holder">
+            <h3>Sign Up</h3>
+            <form id='sign-up'>
+              <input class='form' type="text" name="credentials[email]" placeholder="Email" required>
+              <br>
+              <input class='form' type="text" name="credentials[password]" placeholder="Password" required>
+              <br>
+              <input class='form' type="text" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
+              <br>
+              <button class='form-button'>Sign Up</button>
+            </form>
+          </div>
+          <div id="sign-in-holder">
+            <h3>Sign In</h3>
+            <form id='sign-in'>
+              <input class='form' type="text" name="credentials[email]" placeholder="Email" required>
+              <br>
+              <input class='form' type="text" name="credentials[password]" placeholder="Password" required>
+              <br>
+              <button class='form-button'>Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="logged-in">
+        <div class='container'>
+        <div id='change-password'>
+        <h3>Change Password</h3>
+        <form >
+          <input class='form' type="text" name="passwords[old]" placeholder="Old Password" required>
+          <input class='form' type="text" name="passwords[new]" placeholder="New Password " required>
+          <br>
+          <button class='form-button'>Submit</button>
+        </form>
+      </div>
+      </div>
+      <div class='container'>
+        <div id='purchase-show'>
+        <h4>View Purchase by ID#</h4>
+        <form>
+          <input class='form' name="purchase[id]" type="number" placeholder="Purchase ID#" required>
+          <br>
+          <button class='form-button' type="submit">Submit</button>
+        </form>
+      </div>
+      </div>
+      <div class='container'>
+      <div id='purchase-update'>
+        <h4>Update Purchase by ID#</h4>
+        <form>
+          <input class='form' name="purchase[id]" type="number" placeholder='Purchase ID#' required>
+          <br>
+          <input class='form' name="purchase[item]" type="text" placeholder='Updated Item Name' required>
+          <input class='form' name="purchase[price]" type="number" step="0.01" placeholder='Updated Price ' required>
+          <input class='form' name="purchase[date]" type="date" placeholder='Updated Date' required>
+          <br>
+          <button class='form-button' type= "submit">Submit</button>
+        </form>
+      </div>
+      </div>
+      <div class='container'>
+        <div id='purchase-destroy'>
+        <h4>Delete Purchase by ID#</h4>
+        <form>
+          <input class='form' name="purchase[id]" type="number" placeholder= 'Purchase ID#' required>
+          <br>
+          <button class='form-button' type="submit">Submit</button>
+        </form>
+      </div>
+      </div>
+      <div class='container'>
+      <div id="purchases-create">
+        <h4>Enter Purchase</h4>
+        <form>
+          <input class='form' type="text" name="purchase[item]" placeholder="Item Name" required>
+          <br>
+          <input class='form' type="number" step="0.01" name="purchase[price]" placeholder="Item Price" required>
+          <br>
+          <input class='form' type="date" name="purchase[date]" placeholder="Date of Purchase" required>
+          <br>
+          <button class='form-button' type="submit">Submit</button>
+        </form>
+      </div>
+      </div>
+        <div id='content'></div>
+      </div>
+</div>
+</div>
+</div>
+</div>
+  <!-- <header>
+
   </header>
   <nav id='nav1'>
     <button id='sign-in-button'>Sign In</button>
@@ -113,8 +233,8 @@
     </div>
   </div>
       <div id='content'></div>
-    </div>
-
+    </div> -->
+</div>
 </body>
 
 </html>

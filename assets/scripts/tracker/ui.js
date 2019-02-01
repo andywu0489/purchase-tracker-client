@@ -51,15 +51,13 @@ const onSignOutSuccess = () => {
   $('#user-message').text('Successfully Signed Out')
   $('.logged-in').hide()
   $('.logged-out').show()
-  $('.container').hide()
-  $('.turn').hide()
-  $('.win-text').hide()
+  // $('.container').hide()
   $('#content').hide()
   $('#content').html('<p></p>')
   $('#sign-up-button').show()
   $('#sign-in-button').show()
-  $('#column1').hide()
-  $('#column2').hide()
+  $('#sign-in-holder').hide()
+  $('#sign-up-holder').hide()
   $('#change-password-button').hide()
   $('#sign-out').hide()
   $('#purchases-index').hide()
@@ -72,6 +70,7 @@ const onSignOutSuccess = () => {
   $('#purchase-update').hide()
   $('#purchase-destroy').hide()
   $('#purchases-create').hide()
+  $('.welcome-message').show()
   store.user = null
 }
 
@@ -116,16 +115,16 @@ const onGetPurchasesSuccess = (data) => {
 // }
 
 const onGetPurchasesFailure = function () {
-  $('#user-message').html('Get request failed, please try again')
+  $('#user-message').html('Get Request Failed, Please Try Again')
 }
 
 const onGetPurchaseSuccess = function (response) {
   $('#content').html('')
-  $('#user-message').text('Successfully got purchase')
+  $('#user-message').text('Successfully Got Purchase')
   const purchase = response.purchase
   const purchaseHTML = (`
     <section data-id=${purchase.id}>
-      <div>
+      <div class="listed-items">
         <h6>Item Name: ${purchase.item}</h6>
         <h6>Price: $${purchase.price}</h6>
         <h6>Date: ${purchase.date}</h6>
@@ -167,7 +166,7 @@ const onDestroyPurchaseFailure = function () {
 
 const onCreatePurchaseSuccess = function () {
   $('#content').html('')
-  $('#user-message').html('You Entered a New Purchase')
+  $('#user-message').html('Successfully Entered New Purchase')
   $('#purchases-create input').val('')
 }
 

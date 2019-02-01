@@ -102,14 +102,16 @@ const onDeletePurchase = (event) => {
 }
 
 const onShowSignIn = function () {
-  $('#column1').hide()
-  $('#column2').show()
+  $('.welcome-message').hide()
+  $('#sign-up-holder').hide()
+  $('#sign-in-holder').show()
   $('#user-message').html('')
 }
 
 const onShowSignUp = function () {
-  $('#column2').hide()
-  $('#column1').show()
+  $('.welcome-message').hide()
+  $('#sign-in-holder').hide()
+  $('#sign-up-holder').show()
   $('#user-message').html('')
 }
 

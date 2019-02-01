@@ -1,38 +1,113 @@
 @import '~bootstrap/scss/bootstrap';
-
-$background-color: #919ade;
-$font-color: #dfdfdf;
-$white: #fff;
-$grey: rgb(128, 128, 128);
+// $background-color: #919ade;
+// $font-color: #dfdfdf;
+// $white: #fff;
+// $grey: rgb(128, 128, 128);
 $teal: rgb(0, 156, 161);
-$black: #000;
+$orange: #EA5916;
+
+.container {
+  // border: 1px solid black;
+}
 
 body {
-  background-color: $white;
+  //border: 1px solid black;
+}
+
+header {
+  // border: 1px solid black;
+  height: auto;
+  max-width: 1470px;
+  // text-align: center;
+  padding: 20px;
+  text-align: right;
+  background-color: $orange;
 }
 
 h1 {
-  text-align: center;
+  font-size: 60px;
+  font-family: 'Rubik', sans-serif;
 }
 
-.logged-in {
-  display: none;
+nav {
+  display: flex;
+  justify-content: flex-end;
+  // border: 1px solid black;
+  height: auto;
+  max-width: 1470px;
+  background-color: darken($orange, 10%);
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  // border: 1px solid black;
+  height: auto;
+  min-height: 625px;
+  padding-bottom: 10px;
 }
 
 #column1 {
-  display: none;
-  margin: auto;
-  border: 3px solid $black;
-  padding: 10px;
-  border-radius: 15px;
+  // display: none;
+  flex: 25%;
+  max-width: 300px;
+  flex-direction: row;
+  //align-content: center;
+  padding-top: 10px;
+  background-color: $teal;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black
 }
 
 #column2 {
+  display: flex;
+  flex: 75%;
+  max-width: auto;
+  margin-right: 15px;
+  text-align: center;
+}
+
+.form-holder {
+  margin: 0 auto;
+  // height: 300px;
+  // width: 400px;
+  //border: 1px solid black;
+}
+
+.nav-button {
+  margin: 5px 10px;
+  width: 170px;
+  border-radius: 15px 60px;
+  background-color: darken($teal, 10%);
+  color: white;
+  //border: none;
+
+}
+
+.side-button {
+  margin: 10px 10px 10px 20px;
+  width: 250px;
+  border-radius: 15px 60px;
+  background-color: darken($teal, 10%);
+  border-color: none;
+  color: white;
+  //border: none
+}
+
+#button-holder {
+  text-align: center;
+}
+
+#sign-in-holder {
   display: none;
-  margin: auto;
-  border: 3px solid $black;
-  padding: 10px;
-  border-radius: 15px;
+}
+
+#sign-up-holder {
+  display: none;
 }
 
 #change-password-button {
@@ -63,98 +138,213 @@ h1 {
   display: none;
 }
 
-#user-message {
-  text-align: center;
+.logged-in {
+  display: none;
 }
 
-#purchase-show {
-  // display: flex;
-  border: 3px solid $black;
-  padding: 10px;
+.listed-items {
+  border: 1px solid black;
+  padding: 10px 60px;
+  margin-top: 10px;
+  border-radius: 25px;
+  width: auto;
+}
+
+.form {
   border-radius: 15px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  border-color: $black;
+}
+// #welcome-message {
+//   margin: auto;
+// }
+
+#stuff {
+  margin: 50px auto;
+  font-family: 'Rubik', sans-serif;
 }
 
-#purchase-update {
-  // display: flex;
-  border: 3px solid $black;
-  padding: 10px;
+#delete {
+  border-radius: 15px 60px;
+  width: 100px;
+}
+
+#page-wrapper {
+  width: 1450px;
+  margin: 0 auto;
+}
+
+.form-button {
   border-radius: 15px;
+  padding: 0 20px;
+  border: 2px solid black;
+  background-color: $orange;
+  color: black;
+  font-family: sans-serif;
 }
 
-#purchase-destroy {
-  // display: flex;
-  // justify-content: center;
-  border: 3px solid $black;
-  padding: 10px;
-  border-radius: 15px;
-}
-
-#purchases-create {
-  // display: flex;
-  // justify-content: center;
-  border: 3px solid $black;
-  padding: 20px;
-  border-radius: 15px;
-}
-
-#change-password {
-  // display: flex;
-  // justify-content: center;
-  // flex-direction: column;
-  border: 3px solid $black;
-  padding: 20px;
-  border-radius: 15px;
-}
-
-#nav1 {
-  display: flex;
-  justify-content: center;
 
 
-}
 
-#nav2 {
-  display: flex;
-  justify-content: space-around;
-}
 
-#content {
-  text-align: center;
-}
+//////////////////////
 
-.container {
-  display: flex;
-  justify-content: center;
-}
-
-button {
-  // border-radius: 15px;
-  // background-color: red;
-  // color: white;
-  // width: 200px;
-  // border: 2px solid black;
-}
-
-#sign-in-button {
-  margin-right: 5px;
-}
-
-#sign-up-button {
-  margin-left: 5px;
-}
-
-nav {
-  background-color: grey;
-}
-
-header {
-  height: 100px;
-}
-
-// header {
-//   background-color: $background-color;
+// $background-color: #919ade;
+// $font-color: #dfdfdf;
+// $white: #fff;
+// $grey: rgb(128, 128, 128);
+// $teal: rgb(0, 156, 161);
+// $black: #000;
+//
+// body {
+//   background-color: $white;
+// }
+//
+// h1 {
+//   text-align: center;
+// }
+//
+// .logged-in {
+//   display: none;
+// }
+//
+// #column1 {
+//   display: none;
+//   margin: auto;
+//   border: 3px solid $black;
+//   padding: 10px;
+//   border-radius: 15px;
+// }
+//
+// #column2 {
+//   display: none;
+//   margin: auto;
+//   border: 3px solid $black;
+//   padding: 10px;
+//   border-radius: 15px;
+// }
+//
+// #change-password-button {
+//   display: none;
+// }
+//
+// #sign-out {
+//   display: none;
+// }
+//
+// #purchases-index {
+//   display: none;
+// }
+//
+// #purchase-show-button {
+//   display: none;
+// }
+//
+// #purchase-update-button {
+//   display: none;
+// }
+//
+// #purchase-destroy-button {
+//   display: none;
+// }
+//
+// #purchase-create-button {
+//   display: none;
+// }
+//
+// #user-message {
+//   text-align: center;
+// }
+//
+// #purchase-show {
+//   // display: flex;
+//   border: 3px solid $black;
+//   padding: 10px;
+//   border-radius: 15px;
+// }
+//
+// #purchase-update {
+//   // display: flex;
+//   border: 3px solid $black;
+//   padding: 10px;
+//   border-radius: 15px;
+// }
+//
+// #purchase-destroy {
+//   // display: flex;
+//   // justify-content: center;
+//   border: 3px solid $black;
+//   padding: 10px;
+//   border-radius: 15px;
+// }
+//
+// #purchases-create {
+//   // display: flex;
+//   // justify-content: center;
+//   border: 3px solid $black;
+//   padding: 20px;
+//   border-radius: 15px;
+// }
+//
+// #change-password {
+//   // display: flex;
+//   // justify-content: center;
+//   // flex-direction: column;
+//   border: 3px solid $black;
+//   padding: 20px;
+//   border-radius: 15px;
+// }
+//
+// #nav1 {
+//   display: flex;
+//   justify-content: center;
+//
+//
+// }
+//
+// #nav2 {
+//   display: flex;
+//   justify-content: space-around;
+// }
+//
+// #content {
+//   text-align: center;
+// }
+//
+// .container {
+//   display: flex;
+//   justify-content: center;
+// }
+//
+// button {
+//   // border-radius: 15px;
+//   // background-color: red;
+//   // color: white;
+//   // width: 200px;
+//   // border: 2px solid black;
+// }
+//
+// #sign-in-button {
+//   margin-right: 5px;
+// }
+//
+// #sign-up-button {
+//   margin-left: 5px;
 // }
 //
 // nav {
-//   background-color: $teal;
+//   background-color: grey;
 // }
+//
+// header {
+//   height: 100px;
+// }
+//
+// // header {
+// //   background-color: $background-color;
+// // }
+// //
+// // nav {
+// //   background-color: $teal;
+// // }
