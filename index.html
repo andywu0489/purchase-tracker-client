@@ -17,7 +17,8 @@
 <body>
   <div id='page-wrapper'>
   <header>
-    <h1>Purchase Tracker</h1>
+    <h1>Purchase</h1>
+    <h2>Tracker</h2>
     <h6 id='user-message'></h6>
   </header>
   <nav>
@@ -49,9 +50,9 @@
             <form id='sign-up'>
               <input class='form' type="text" name="credentials[email]" placeholder="Email" required>
               <br>
-              <input class='form' type="text" name="credentials[password]" placeholder="Password" required>
+              <input class='form' type="password" name="credentials[password]" placeholder="Password" required>
               <br>
-              <input class='form' type="text" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
+              <input class='form' type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
               <br>
               <button class='form-button'>Sign Up</button>
             </form>
@@ -61,7 +62,7 @@
             <form id='sign-in'>
               <input class='form' type="text" name="credentials[email]" placeholder="Email" required>
               <br>
-              <input class='form' type="text" name="credentials[password]" placeholder="Password" required>
+              <input class='form' type="password" name="credentials[password]" placeholder="Password" required>
               <br>
               <button class='form-button'>Submit</button>
             </form>
@@ -73,8 +74,8 @@
         <div id='change-password'>
         <h3>Change Password</h3>
         <form >
-          <input class='form' type="text" name="passwords[old]" placeholder="Old Password" required>
-          <input class='form' type="text" name="passwords[new]" placeholder="New Password " required>
+          <input class='form' type="password" name="passwords[old]" placeholder="Old Password" required>
+          <input class='form' type="password" name="passwords[new]" placeholder="New Password " required>
           <br>
           <button class='form-button'>Submit</button>
         </form>

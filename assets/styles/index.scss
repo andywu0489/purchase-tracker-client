@@ -22,10 +22,16 @@ header {
   padding: 20px;
   text-align: right;
   background-color: $orange;
+  color: darken(grey, 30%);
 }
 
 h1 {
   font-size: 60px;
+  font-family: 'Rubik', sans-serif;
+}
+
+h2 {
+  font-size: 45px;
   font-family: 'Rubik', sans-serif;
 }
 

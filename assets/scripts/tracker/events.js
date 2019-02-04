@@ -106,6 +106,7 @@ const onShowSignIn = function () {
   $('#sign-up-holder').hide()
   $('#sign-in-holder').show()
   $('#user-message').html('')
+  $('form').trigger('reset')
 }
 
 const onShowSignUp = function () {
@@ -113,6 +114,7 @@ const onShowSignUp = function () {
   $('#sign-in-holder').hide()
   $('#sign-up-holder').show()
   $('#user-message').html('')
+  $('form').trigger('reset')
 }
 
 const onShowChangePassword = () => {
@@ -123,6 +125,7 @@ const onShowChangePassword = () => {
   $('#purchases-create').hide()
   $('#content').html('<p></p>')
   $('#user-message').html('')
+  $('form').trigger('reset')
 }
 
 const onShowPurchaseShow = () => {
@@ -133,6 +136,7 @@ const onShowPurchaseShow = () => {
   $('#purchases-create').hide()
   $('#content').html('<p></p>')
   $('#user-message').html('')
+  $('form').trigger('reset')
 }
 
 const onShowPurchaseUpdate = () => {
@@ -143,6 +147,7 @@ const onShowPurchaseUpdate = () => {
   $('#purchases-create').hide()
   $('#content').html('<p></p>')
   $('#user-message').html('')
+  $('form').trigger('reset')
 }
 
 const onShowPurchaseDestroy = () => {
@@ -153,6 +158,7 @@ const onShowPurchaseDestroy = () => {
   $('#purchases-create').hide()
   $('#content').html('<p></p>')
   $('#user-message').html('')
+  $('form').trigger('reset')
 }
 
 const onShowPurchaseCreate = () => {
@@ -163,6 +169,7 @@ const onShowPurchaseCreate = () => {
   $('#purchases-create').show()
   $('#content').html('<p></p>')
   $('#user-message').html('')
+  $('form').trigger('reset')
 }
 
 module.exports = {
