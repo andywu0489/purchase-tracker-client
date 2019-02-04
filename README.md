@@ -1,6 +1,6 @@
 Sign-up, sign-in, and track your spending habits with this application.
 
-The backend of this application can be found at:
+The backend repo of this application can be found at:
 https://github.com/andywu0489/purchase-tracker-api
 
 User
