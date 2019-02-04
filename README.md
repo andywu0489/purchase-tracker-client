@@ -3,7 +3,9 @@ Sign-up, sign-in, and track your spending habits with this application.
 The backend repo of this application can be found at:
 https://github.com/andywu0489/purchase-tracker-api
 
-User
+Deployed Sites
+https://github.com/andywu0489/purchase-tracker-client
+https://mysterious-headland-52083.herokuapp.com/
 
 Planning and Development Process
 
