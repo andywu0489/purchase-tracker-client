@@ -45,14 +45,17 @@ nav {
 .row {
   display: flex;
   justify-content: center;
+  flex-direction: row;
+  height: 100vh;
 }
 
 .column {
   // border: 1px solid black;
   height: auto;
-  min-height: 625px;
+  height: 100vh;
   padding-bottom: 10px;
-  flex-direction: row;
+  height: 100vh;
+  // flex-direction: row;
 }
 
 #column1 {
@@ -63,16 +66,18 @@ nav {
   padding-top: 10px;
   background-color: $teal;
   border-right: 1px solid black;
-  border-bottom: 1px solid black
+  border-bottom: 1px solid black;
+  height: auto;
 }
 
 #column2 {
   // display: flex;
   // flex: 75%;
-  width: 79.25vw;
+  width: 80vw;
   // margin-right: 15px;
   text-align: center;
   background-color: lighten(grey, 35%);
+  height: auto;
 }
 
 .form-holder {
@@ -174,10 +179,10 @@ nav {
   width: 100px;
 }
 
-#page-wrapper {
-  width: 1450px;
-  margin: 0 auto;
-}
+// #page-wrapper {
+//   width: 1450px;
+//   margin: 0 auto;
+// }
 
 .form-button {
   border-radius: 15px;
