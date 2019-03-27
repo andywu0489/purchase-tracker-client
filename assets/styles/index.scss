@@ -13,7 +13,7 @@ body {
 header {
   // border: 1px solid black;
   height: auto;
-  max-width: 1470px;
+  width: 100vw;
   // text-align: center;
   padding: 20px;
   text-align: right;
@@ -36,7 +36,7 @@ nav {
   justify-content: flex-end;
   // border: 1px solid black;
   height: auto;
-  max-width: 1470px;
+  width: 100vw;
   background-color: darken($orange, 10%);
   border-top: 1px solid black;
   border-bottom: 1px solid black;
@@ -44,6 +44,7 @@ nav {
 
 .row {
   display: flex;
+  justify-content: center;
 }
 
 .column {
@@ -51,14 +52,14 @@ nav {
   height: auto;
   min-height: 625px;
   padding-bottom: 10px;
+  flex-direction: row;
 }
 
 #column1 {
   // display: none;
-  flex: 25%;
-  max-width: 300px;
-  flex-direction: row;
+  // flex: 25%;
   //align-content: center;
+  width: 20vw;
   padding-top: 10px;
   background-color: $teal;
   border-right: 1px solid black;
@@ -66,10 +67,10 @@ nav {
 }
 
 #column2 {
-  display: flex;
-  flex: 75%;
-  max-width: auto;
-  margin-right: 15px;
+  // display: flex;
+  // flex: 75%;
+  width: 79.25vw;
+  // margin-right: 15px;
   text-align: center;
   background-color: lighten(grey, 35%);
 }
@@ -150,7 +151,7 @@ nav {
   padding: 10px 60px;
   margin-top: 10px;
   border-radius: 25px;
-  width: auto;
+  width: 300px;
 }
 
 .form {
@@ -185,4 +186,9 @@ nav {
   background-color: $orange;
   color: black;
   font-family: sans-serif;
+}
+
+section {
+  display: flex;
+  justify-content: center;
 }

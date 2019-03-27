@@ -74,12 +74,25 @@ const onSignOutSuccess = () => {
   store.user = null
 }
 
+let priceArray = []
+
 const onSignOutFailure = () => {
   $('#user-message').text('Error on Sign Out')
 }
 
 const onGetPurchasesSuccess = (data) => {
+  let totalPrice = 0
+  priceArray = []
   const showPurchasesHtml = showPurchasesTemplate({ purchases: data.purchases })
+
+  data.purchases.forEach(i => priceArray.push(Number(i.price)))
+  totalPrice = priceArray.reduce(function (prev, curr) {
+    return Math.floor(prev * 100) / 100 + Math.floor(curr * 100) / 100
+  })
+
+  console.log(totalPrice)
+  $('#total').html(`Total Spent: $${totalPrice}`)
+
   $('#content').html(showPurchasesHtml)
   if ($('#content').is(':empty')) {
     $('#user-message').text('No Purchases Entered')
@@ -187,8 +200,20 @@ const onDeletePurchaseFailure = function () {
   $('#purchase-destroy input').val('')
 }
 
-const onGetPurchasesAfterDeleteSuccess = function (data) {
+const onGetPurchasesAfterDeleteSuccess = (data) => {
+  let totalPrice = 0
+  priceArray = []
+
   const showPurchasesHtml = showPurchasesTemplate({ purchases: data.purchases })
+
+  data.purchases.forEach(i => priceArray.push(Number(i.price)))
+  totalPrice = priceArray.reduce(function (prev, curr) {
+    return Math.floor(prev * 100) / 100 + Math.floor(curr * 100) / 100
+  })
+
+  console.log(totalPrice)
+  $('#total').html(`Total Spent: $${totalPrice}`)
+
   $('#content').html(showPurchasesHtml)
   $('#user-message').html('Delete Request Successful')
 }

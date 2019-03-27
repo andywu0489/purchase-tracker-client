@@ -43,9 +43,11 @@ const onSignOut = (event) => {
     .catch(ui.onSignOutFailure)
 
   $('form').trigger('reset')
+  $('#total').hide()
 }
 
 const onGetPurchases = function () {
+  $('#total').show()
   api.index()
     .then(ui.onGetPurchasesSuccess)
     .catch(ui.onGetPurchasesFailure)
@@ -96,6 +98,7 @@ const onGetPurchasesAfterDelete = function () {
 const onDeletePurchase = (event) => {
   event.preventDefault()
   const target = $(event.target).closest('section').data('id')
+  console.log($(event.target).closest('section'))
   api.destroy(target)
     .then(() => onGetPurchasesAfterDelete())
     .catch(ui.onDeletePurchaseFailure)
@@ -126,6 +129,7 @@ const onShowChangePassword = () => {
   $('#content').html('<p></p>')
   $('#user-message').html('')
   $('form').trigger('reset')
+  $('#total').hide()
 }
 
 const onShowPurchaseShow = () => {
@@ -137,6 +141,7 @@ const onShowPurchaseShow = () => {
   $('#content').html('<p></p>')
   $('#user-message').html('')
   $('form').trigger('reset')
+  $('#total').hide()
 }
 
 const onShowPurchaseUpdate = () => {
@@ -148,6 +153,7 @@ const onShowPurchaseUpdate = () => {
   $('#content').html('<p></p>')
   $('#user-message').html('')
   $('form').trigger('reset')
+  $('#total').hide()
 }
 
 const onShowPurchaseDestroy = () => {
@@ -159,6 +165,7 @@ const onShowPurchaseDestroy = () => {
   $('#content').html('<p></p>')
   $('#user-message').html('')
   $('form').trigger('reset')
+  $('#total').hide()
 }
 
 const onShowPurchaseCreate = () => {
@@ -170,6 +177,7 @@ const onShowPurchaseCreate = () => {
   $('#content').html('<p></p>')
   $('#user-message').html('')
   $('form').trigger('reset')
+  $('#total').hide()
 }
 
 module.exports = {
