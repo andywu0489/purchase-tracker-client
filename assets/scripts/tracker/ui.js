@@ -85,13 +85,16 @@ const onGetPurchasesSuccess = (data) => {
   priceArray = []
   const showPurchasesHtml = showPurchasesTemplate({ purchases: data.purchases })
 
-  data.purchases.forEach(i => priceArray.push(Number(i.price)))
-  totalPrice = priceArray.reduce(function (prev, curr) {
-    return Math.floor(prev * 100) / 100 + Math.floor(curr * 100) / 100
-  })
-
-  console.log(totalPrice)
-  $('#total').html(`Total Spent: $${totalPrice}`)
+  console.log(data.purchases)
+  if (data.purchases.length > 0) {
+    data.purchases.forEach(i => priceArray.push(Number(i.price)))
+    totalPrice = priceArray.reduce(function (prev, curr) {
+      return Math.floor(prev * 100) / 100 + Math.floor(curr * 100) / 100
+    })
+    $('#total').html(`Total Spent: $${totalPrice}`)
+  } else {
+    $('#total').html('Total Spent: $0.00')
+  }
 
   $('#content').html(showPurchasesHtml)
   if ($('#content').is(':empty')) {
@@ -206,10 +209,15 @@ const onGetPurchasesAfterDeleteSuccess = (data) => {
 
   const showPurchasesHtml = showPurchasesTemplate({ purchases: data.purchases })
 
-  data.purchases.forEach(i => priceArray.push(Number(i.price)))
-  totalPrice = priceArray.reduce(function (prev, curr) {
-    return Math.floor(prev * 100) / 100 + Math.floor(curr * 100) / 100
-  })
+  if (data.purchases.length > 0) {
+    data.purchases.forEach(i => priceArray.push(Number(i.price)))
+    totalPrice = priceArray.reduce(function (prev, curr) {
+      return Math.floor(prev * 100) / 100 + Math.floor(curr * 100) / 100
+    })
+    $('#total').html(`Total Spent: $${totalPrice}`)
+  } else {
+    $('#total').html('Total Spent: $0.00')
+  }
 
   console.log(totalPrice)
   $('#total').html(`Total Spent: $${totalPrice}`)
